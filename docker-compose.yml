@@ -1,0 +1,29 @@
+services:
+  bank_api:
+    build: .
+    image: bank_api
+    container_name: bank_api
+    restart: on-failure
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:delegated
+      - bundle_volume:/usr/local/bundle
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:14-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
+  bundle_volume:

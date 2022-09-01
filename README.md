@@ -61,3 +61,58 @@ Please organize, design, test and document your code as if it were going into pr
 All the best and happy coding,
 
 The Bloom Team
+
+
+# Bank API
+
+## Setup
+
+### Build app image
+```
+docker compose build
+```
+
+### Install gems
+```
+docker compose run bank_api bundle install
+```
+
+### Database
+#### Run postgresql
+```
+docker compose up -d postgres
+```
+
+#### Prepare DB
+##### Create database, run migrations and add seed entries.
+```
+docker compose run bank_api bundle exec rails db:setup
+```
+
+## Run app
+```
+docker compose up
+```
+
+## Run tests
+```
+docker compose run bank_api bundle exec rspec
+```
+
+## Access app
+
+#### URL
+http://localhost:3000
+
+#### Headers
+API endpoints are protected by HTTP Token Authentication
+```
+Authorization: Token access_token_hash
+Accept: application/json
+Content-Type: application/json
+```
+#### Body
+```
+{
+}
+```
