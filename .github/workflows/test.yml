@@ -1,0 +1,26 @@
+name: test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Pull Docker images
+      run: docker compose pull postgres
+    - name: Run postgresql
+      run: docker compose up -d postgres
+    - name: Build the Docker image
+      run: docker compose build
+    - name: Install gems
+      run: docker compose run bank_api bundle install --frozen --no-cache --jobs 3 --retry 3
+    - name: Prepare DB
+      run: docker compose run bank_api bundle exec rails db:create db:schema:load RAILS_ENV=test
+    - name: Run tests
+      run: docker compose run bank_api bundle exec rspec
