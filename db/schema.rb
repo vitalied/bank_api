@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_02_191313) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_02_222807) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_191313) do
     t.index ["name"], name: "index_customers_on_name", unique: true
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.string "transaction_type", limit: 10, null: false
+    t.string "sender_iban", limit: 34, null: false
+    t.string "receiver_iban", limit: 34, null: false
+    t.decimal "amount", precision: 10, scale: 2, default: "0.0", null: false
+    t.string "notes"
+    t.bigint "created_by_id"
+    t.bigint "updated_by_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_transactions_on_account_id"
+    t.index ["created_by_id"], name: "index_transactions_on_created_by_id"
+    t.index ["receiver_iban"], name: "index_transactions_on_receiver_iban"
+    t.index ["sender_iban"], name: "index_transactions_on_sender_iban"
+    t.index ["transaction_type"], name: "index_transactions_on_transaction_type"
+    t.index ["updated_by_id"], name: "index_transactions_on_updated_by_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "access_token", limit: 40, null: false
     t.string "username", limit: 100, null: false
@@ -47,4 +66,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_02_191313) do
   add_foreign_key "accounts", "customers"
   add_foreign_key "accounts", "users", column: "created_by_id"
   add_foreign_key "accounts", "users", column: "updated_by_id"
+  add_foreign_key "transactions", "accounts"
+  add_foreign_key "transactions", "users", column: "created_by_id"
+  add_foreign_key "transactions", "users", column: "updated_by_id"
 end

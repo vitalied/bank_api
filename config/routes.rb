@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   defaults format: :json do
     resources :customers, only: %i[index show create update] do
-      resources :accounts, only: %i[index show create]
+      resources :accounts, only: %i[index show create] do
+        resources :transactions, only: %i[index show]
+      end
     end
   end
 

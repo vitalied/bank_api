@@ -28,6 +28,7 @@ class Account < ApplicationRecord
   belongs_to :customer
   belongs_to :created_by, class_name: 'User', optional: true
   belongs_to :updated_by, class_name: 'User', optional: true
+  has_many :transactions
 
   validates :iban, presence: true, length: { maximum: 34 }, uniqueness: true
   validates :amount, numericality: { greater_than_or_equal_to: 0.0 }, presence: true
