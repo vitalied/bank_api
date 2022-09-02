@@ -1,0 +1,73 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.1
+  TargetRailsVersion: 7.0
+  NewCops: enable
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/schema.rb
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+    - vendor/**/*
+    - config.ru
+    - Rakefile
+
+Rails/ApplicationController:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/services/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/helpers/**/*'
+    - 'app/services/**/*'
+    - 'app/controllers/concerns/exception_handling.rb'
+    - 'db/migrate/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'app/controllers/concerns/exception_handling.rb'
+    - 'db/migrate/*'
+    - 'spec/**/*'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/StructInheritance:
+  Enabled: false
+
+Style/RedundantBegin:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/RescueModifier:
+  Enabled: false
+
+Style/HashSyntax:
+  EnforcedShorthandSyntax: either
+
+Naming/MethodParameterName:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
