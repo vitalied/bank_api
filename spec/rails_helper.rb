@@ -72,6 +72,11 @@ RSpec.configure do |config|
     end
   end
 
+  # Clean RequestStore
+  config.before do
+    RequestStore.clear!
+  end
+
   if Bullet.enable?
     config.before(:each) do
       Bullet.start_request
