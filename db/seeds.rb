@@ -7,3 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 User.create(access_token: :access_token_hash, username: :admin)
+
+Customer.create(name: 'Arisha Barron')
+Customer.create(name: 'Branden Gibson')
+Customer.create(name: 'Rhonda Church')
+Customer.create(name: 'Georgina Hazel')
