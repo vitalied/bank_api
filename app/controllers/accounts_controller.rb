@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  include Swaggers::AccountsController
+
   before_action :set_customer
   before_action :set_account, only: %i[show transfer]
 

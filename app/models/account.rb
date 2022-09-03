@@ -25,6 +25,8 @@
 #  fk_rails_...  (updated_by_id => users.id)
 #
 class Account < ApplicationRecord
+  include Swaggers::AccountModel
+
   belongs_to :customer
   belongs_to :created_by, class_name: 'User', optional: true
   belongs_to :updated_by, class_name: 'User', optional: true

@@ -1,0 +1,494 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2022-09-03T18:31:52.437Z",
+  "__export_source": "insomnia.desktop.app:v2022.5.0",
+  "resources": [
+    {
+      "_id": "req_f05a267ef3d4417982d5c0b4c1f38783",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662228946444,
+      "created": 1662228946444,
+      "url": "http://localhost:3000/customers",
+      "name": "GET /customers",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113439,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "parentId": "wrk_5345a1f734d941bb85e9714ee286a448",
+      "modified": 1662228946442,
+      "created": 1662228946442,
+      "name": "bank_api",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1000000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_5345a1f734d941bb85e9714ee286a448",
+      "parentId": null,
+      "modified": 1662228933364,
+      "created": 1662228933364,
+      "name": "test",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_bb2da7de5fc749ef8e61cfae922be9f0",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662228946447,
+      "created": 1662228946447,
+      "url": "http://localhost:3000/customers/1",
+      "name": "GET /customers/:id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113414,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3d7830ea529f44aca789f13f81c7318a",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662229875049,
+      "created": 1662228946468,
+      "url": "http://localhost:3000/customers",
+      "name": "POST /customers",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113351.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_35237e90efbf489191f2568145a322fe",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662229875657,
+      "created": 1662228946471,
+      "url": "http://localhost:3000/customers/1",
+      "name": "PUT /customers/:id",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113320.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4e3441c2b51649e1a134d1835d46dd81",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662228946450,
+      "created": 1662228946450,
+      "url": "http://localhost:3000/customers/1/accounts",
+      "name": "GET /customers/:customer_id/accounts",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113289,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9975ef51df2c4d7d9709dd8ceec9fe10",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662228946456,
+      "created": 1662228946456,
+      "url": "http://localhost:3000/customers/1/accounts/1",
+      "name": "GET /customers/:customer_id/accounts/:id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113264,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_205e512454c5458d8eeedb53627a79f0",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662229877781,
+      "created": 1662228946453,
+      "url": "http://localhost:3000/customers/1/accounts",
+      "name": "POST /customers/:customer_id/accounts",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"iban\": \"\",\n\t\"amount\": 0.00\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113239,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_1cea5bb8a8264e0880898797fdedce1b",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662229880462,
+      "created": 1662228946462,
+      "url": "http://localhost:3000/customers/1/accounts/1/transfer",
+      "name": "POST /customers/:customer_id/accounts/:id/transfer",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"receiver_iban\": \"\",\n\t\"amount\": 0.00,\n\t\"notes\": \"\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113164,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_d9ed7098474142498739e3d916e54d13",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662228946459,
+      "created": 1662228946459,
+      "url": "http://localhost:3000/customers/1/accounts/1/transactions",
+      "name": "GET /customers/:customer_id/accounts/:account_id/transactions",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113139,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_96109ff90f39470ea0b0adda7d36c158",
+      "parentId": "fld_10bb1fcd109b4fd0a2c1057cb464afaf",
+      "modified": 1662228946465,
+      "created": 1662228946465,
+      "url": "http://localhost:3000/customers/1/accounts/1/transactions/1",
+      "name": "GET /customers/:customer_id/accounts/:account_id/transactions/:id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_6486cfaf28c240c9873ef6f58f130af5",
+          "name": "Authorization",
+          "value": "Token access_token_hash",
+          "description": ""
+        },
+        {
+          "id": "pair_3fa305560a424bfc800ac69896fe4392",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        },
+        {
+          "id": "pair_85c976c7757843d3a5801d8c0e7b1f6a",
+          "name": "Content-Type",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1662134113089,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_c24a4751c0226829af72cdf3127a4b6dd36d6a6c",
+      "parentId": "wrk_5345a1f734d941bb85e9714ee286a448",
+      "modified": 1662228933368,
+      "created": 1662228933368,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1662228933368,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_c24a4751c0226829af72cdf3127a4b6dd36d6a6c",
+      "parentId": "wrk_5345a1f734d941bb85e9714ee286a448",
+      "modified": 1662228933369,
+      "created": 1662228933369,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_7409f8178ab84b8e8df2284cfdf3ecfa",
+      "parentId": "wrk_5345a1f734d941bb85e9714ee286a448",
+      "modified": 1662228933365,
+      "created": 1662228933365,
+      "fileName": "test",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}

@@ -65,3 +65,6 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
+
+# Swagger docs
+gem 'swagger-blocks'

@@ -116,3 +116,13 @@ Content-Type: application/json
 {
 }
 ```
+
+## Access API docs
+
+#### URL
+http://localhost:8080
+
+## Insomnia Request Collection
+
+Request Collection for [Insomnia REST API Client](https://insomnia.rest/download):
+[insomnia.json](insomnia.json)

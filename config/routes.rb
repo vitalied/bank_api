@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  unless Rails.env.production?
+    resources :apischema, only: :index
+  end
+
   defaults format: :json do
     resources :customers, only: %i[index show create update] do
       resources :accounts, only: %i[index show create] do

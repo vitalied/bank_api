@@ -12,6 +12,8 @@
 #  index_customers_on_name  (name) UNIQUE
 #
 class Customer < ApplicationRecord
+  include Swaggers::CustomerModel
+
   has_many :accounts
 
   validates :name, presence: true, length: { maximum: 100 }, uniqueness: true

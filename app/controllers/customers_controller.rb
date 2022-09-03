@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  include Swaggers::CustomersController
+
   before_action :set_customer, only: %i[show update]
 
   # GET /customers

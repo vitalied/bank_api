@@ -43,7 +43,9 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   Exclude:
+    - 'app/controllers/concerns/swaggers/**/*'
     - 'app/controllers/concerns/exception_handling.rb'
+    - 'app/models/concerns/swaggers/**/*'
     - 'db/migrate/*'
     - 'spec/**/*'
 
@@ -63,6 +65,11 @@ Style/Documentation:
 
 Style/StructInheritance:
   Enabled: false
+
+Style/OptionalBooleanParameter:
+  Exclude:
+    - 'app/controllers/concerns/swaggers/**/*'
+    - 'app/models/concerns/swaggers/**/*'
 
 Style/RedundantBegin:
   Enabled: false

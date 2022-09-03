@@ -30,6 +30,8 @@
 #  fk_rails_...  (updated_by_id => users.id)
 #
 class Transaction < ApplicationRecord
+  include Swaggers::TransactionModel
+
   belongs_to :account
   belongs_to :created_by, class_name: 'User', optional: true
   belongs_to :updated_by, class_name: 'User', optional: true

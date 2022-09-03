@@ -24,6 +24,14 @@ services:
     env_file:
       - .env
 
+  apischema:
+    image: swaggerapi/swagger-ui
+    restart: always
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
+
 volumes:
   postgres_data:
   bundle_volume:

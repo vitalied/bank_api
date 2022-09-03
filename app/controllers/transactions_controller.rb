@@ -1,4 +1,6 @@
 class TransactionsController < ApplicationController
+  include Swaggers::TransactionsController
+
   before_action :set_customer
   before_action :set_account
   before_action :set_transaction, only: :show

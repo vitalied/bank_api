@@ -1,4 +1,5 @@
 class ApplicationRecord < ActiveRecord::Base
+  include Swagger::Blocks
   include ModelAuthentication
 
   primary_abstract_class
