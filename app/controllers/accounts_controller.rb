@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   before_action :set_customer
-  before_action :set_account, only: :show
+  before_action :set_account, only: %i[show transfer]
 
   # GET /customers/:customer_id/accounts
   def index
@@ -26,6 +26,17 @@ class AccountsController < ApplicationController
     end
   end
 
+  # POST /customers/:customer_id/accounts/:id/transfer
+  def transfer
+    transfer_service = TransferService.new(transfer_params)
+
+    if transfer_service.call
+      head :created
+    else
+      render_errors(transfer_service.errors)
+    end
+  end
+
   private
 
   def set_customer
@@ -38,5 +49,12 @@ class AccountsController < ApplicationController
 
   def account_params
     params.permit(:iban, :amount)
+  end
+
+  def transfer_params
+    params.permit(:receiver_iban, :amount, :notes)
+          .to_h
+          .merge(account_id: @account.id, sender_iban: @account.iban)
+          .symbolize_keys
   end
 end

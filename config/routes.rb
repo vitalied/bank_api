@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     resources :customers, only: %i[index show create update] do
       resources :accounts, only: %i[index show create] do
         resources :transactions, only: %i[index show]
+
+        member do
+          post :transfer
+        end
       end
     end
   end

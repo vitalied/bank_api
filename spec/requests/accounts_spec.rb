@@ -165,5 +165,111 @@ RSpec.describe '/customers/:customer_id/accounts', type: :request do
         end
       end
     end
+
+    describe 'POST /customers/:customer_id/accounts/:id/transfer' do
+      let(:new_transaction) { build :send_transaction }
+      let(:valid_params) { { receiver_iban: new_transaction.receiver_iban, amount: new_transaction.amount } }
+      let(:invalid_params) { { receiver_iban: nil } }
+
+      context 'when Customer entity exist' do
+        context 'when Account entity exist' do
+          context 'with valid params' do
+            let(:transfer_service) { instance_double TransferService }
+
+            let(:post_request) do
+              post transfer_customer_account_path(customer, account),
+                   params: valid_params, headers: bearer_token_headers, as: :json
+            end
+
+            before do
+              allow(TransferService).to receive(:new)
+                .with(
+                  account_id: account.id,
+                  sender_iban: account.iban,
+                  receiver_iban: valid_params[:receiver_iban],
+                  amount: valid_params[:amount].to_s
+                )
+                .and_return(transfer_service)
+              allow(transfer_service).to receive(:call).and_return(true)
+            end
+
+            it 'returns :created status' do
+              post_request
+
+              expect(TransferService).to have_received(:new)
+              expect(transfer_service).to have_received(:call)
+
+              expect(response).to have_http_status(:created)
+            end
+          end
+
+          context 'with invalid parameters' do
+            let(:transfer_service) { instance_double TransferService, errors: 'errors' }
+
+            let(:post_request) do
+              post transfer_customer_account_path(customer, account),
+                   params: invalid_params, headers: bearer_token_headers, as: :json
+            end
+
+            before do
+              allow(TransferService).to receive(:new)
+                .with(
+                  account_id: account.id,
+                  sender_iban: account.iban,
+                  receiver_iban: invalid_params[:receiver_iban]
+                )
+                .and_return(transfer_service)
+              allow(transfer_service).to receive(:call).and_return(false)
+            end
+
+            it 'returns an error response' do
+              post_request
+
+              expect(TransferService).to have_received(:new)
+              expect(transfer_service).to have_received(:call)
+
+              expect(response).to have_http_status(:unprocessable_entity)
+              expect(body_errors).to be_present
+            end
+          end
+        end
+
+        context 'when Account entity exist, but the owner is another Customer' do
+          before do
+            post transfer_customer_account_path(customer, other_account),
+                 params: valid_params, headers: bearer_token_headers, as: :json
+          end
+
+          it 'returns an error response' do
+            expect(response).to have_http_status(:not_found)
+            expect(body_errors).to be_present
+          end
+        end
+
+        context 'when Account entity does not exist' do
+          before do
+            post transfer_customer_account_path(customer, :fake_id),
+                 params: valid_params, headers: bearer_token_headers, as: :json
+          end
+
+          it 'returns an error response' do
+            expect(response).to have_http_status(:not_found)
+            expect(body_errors).to be_present
+          end
+        end
+      end
+
+      context 'when Customer entity does not exist' do
+        before do
+          post transfer_customer_account_path(:fake_id, account),
+               params: valid_params, headers: bearer_token_headers, as: :json
+        end
+
+        it 'returns an error response' do
+          expect(response).to have_http_status(:not_found)
+          expect(body_errors).to be_present
+        end
+      end
+    end
   end
 end

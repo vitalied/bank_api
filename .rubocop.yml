@@ -47,6 +47,14 @@ Metrics/BlockLength:
     - 'db/migrate/*'
     - 'spec/**/*'
 
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'app/services/transfer_service.rb'
+
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'app/services/transfer_service.rb'
+
 Style/FrozenStringLiteralComment:
   Enabled: false
 
